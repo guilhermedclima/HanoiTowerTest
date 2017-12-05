@@ -1,0 +1,6 @@
+D:\teste\HanoiTower\EI.Hanoi.Model\bin\Release\Hanoi.Model.dll
+D:\teste\HanoiTower\EI.Hanoi.Model\bin\Release\Hanoi.Model.pdb
+D:\teste\HanoiTower\EI.Hanoi.Model\obj\Release\Hanoi.Model.csprojResolveAssemblyReference.cache
+D:\teste\HanoiTower\EI.Hanoi.Model\obj\Release\Hanoi.Model.csproj.CoreCompileInputs.cache
+D:\teste\HanoiTower\EI.Hanoi.Model\obj\Release\Hanoi.Model.dll
+D:\teste\HanoiTower\EI.Hanoi.Model\obj\Release\Hanoi.Model.pdb

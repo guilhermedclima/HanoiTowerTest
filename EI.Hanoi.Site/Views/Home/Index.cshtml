@@ -1,0 +1,295 @@
+﻿@{
+    ViewBag.Title = "Hanoi Tower - Guilherme de Carvalho Lima";
+}
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .game {
+        background-image: url('../../Assets/Images/bg.png');
+        width: 646px;
+        height: 190px;
+        margin-bottom: 0px;
+    }
+
+    .tower {
+        width: 236px;
+        border: 1px dotted white;
+        /* float: left;*/
+        height: 190px;
+        display: table-cell;
+        position: relative;
+        /* vertical-align: bottom;*/
+    }
+
+    .disk {
+        height: 20px;
+        margin: 0px auto;
+        opacity: 0.8;
+        border-radius: 5px 5px;
+        border: 1px solid black;
+    }
+
+        .disk.one {
+            width: 30px;
+        }
+
+        .disk.two {
+            width: 60px;
+        }
+
+        .disk.three {
+            width: 90px;
+        }
+
+        .disk.four {
+            width: 120px;
+        }
+
+        .disk.five {
+            width: 150px;
+        }
+
+    .bg-red {
+        background-color: red;
+    }
+
+    .bg-blue {
+        background-color: lightblue;
+    }
+
+    .bg-green {
+        background-color: green;
+    }
+
+    .bg-pink {
+        background-color: pink;
+    }
+
+    .bg-gray {
+        background-color: gray;
+    }
+
+    .organizer {
+        height: 0px;
+        width: 215px;
+        border: 0px;
+    }
+</style>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/home">HanoiTower</a>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <div class="list-group" style="padding:10px">
+                <a href="#" class="list-group-item active">
+                    Iniciar Jogo
+                </a>
+                <a href="/documentation" class="list-group-item">API Documentation</a>
+                <a href="#" class="list-group-item" onclick="ResetGames();">Reset All games</a>
+            </div>
+        </div>
+        <div style="display:inline-table; padding:30px;">
+            <div class="demo hidden">
+                <div class="tower">
+                    <div class="organizer"></div>
+                    <div class="disk bg-red one"></div>
+                    <div class="disk bg-blue two"></div>
+                    <div class="disk bg-green three"></div>
+                    <div class="disk bg-pink four"></div>
+                    <div class="disk bg-gray five"></div>
+                </div>
+                <div class="tower">
+                    <div class="organizer"></div>
+                </div>
+                <div class="tower">
+                    <div class="organizer"></div>
+                </div>
+                <br />
+            </div>
+            @*<a href="#" class="list-group-item active" onclick="StartGame();">
+                    Iniciar Jogo
+                </a>*@
+            Informe um número até (5) e clique em <b>Start Game</b> para iniciar uma partida.<br />
+            <div>
+                <input type="number" id="NumOfDisks" placeholder="Quantidade de discos" max="5" />
+                <button onclick="StartGame()">Start Game</button>
+            </div>
+            <div class="divider"></div>
+
+            <hr style="width:100%" />
+            <div class="container">
+                <div class="alert alert-info" role="alert"> <strong>Histórico dos jogos:</strong>&nbsp;Abaixo estarão listados os movimentos realizados pelos jogos.</div>
+                <ul id="discussion"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var NumberOfDisks = 0;
+    $(window).ready
+        (
+        function () {
+            Organize();
+            StartSinalR();
+            ResetGames(true);
+        }
+        );
+    this.Hidedivs = function () {
+        console.log(NumberOfDisks);
+        switch (NumberOfDisks) {
+
+            case "1":
+                $('.demo.hidden .tower')[0].getElementsByClassName('one')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('two')[0].style.display = 'none';
+                $('.demo.hidden .tower')[0].getElementsByClassName('three')[0].style.display = 'none';
+                $('.demo.hidden .tower')[0].getElementsByClassName('four')[0].style.display = 'none';
+                $('.demo.hidden .tower')[0].getElementsByClassName('five')[0].style.display = 'none';
+                break;
+            case "2":
+                $('.demo.hidden .tower')[0].getElementsByClassName('one')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('two')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('three')[0].style.display = 'none';
+                $('.demo.hidden .tower')[0].getElementsByClassName('four')[0].style.display = 'none';
+                $('.demo.hidden .tower')[0].getElementsByClassName('five')[0].style.display = 'none';
+                break;
+            case "3":
+                $('.demo.hidden .tower')[0].getElementsByClassName('one')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('two')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('three')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('four')[0].style.display = 'none';
+                $('.demo.hidden .tower')[0].getElementsByClassName('five')[0].style.display = 'none';
+                break;
+            case "4":
+                $('.demo.hidden .tower')[0].getElementsByClassName('one')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('two')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('three')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('four')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('five')[0].style.display = 'none';
+                break
+            case "5":
+                $('.demo.hidden .tower')[0].getElementsByClassName('one')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('two')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('three')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('four')[0].style.display = 'block';
+                $('.demo.hidden .tower')[0].getElementsByClassName('five')[0].style.display = 'block';
+                break;
+        }
+    }
+    this.StartGame = function () {
+        NumberOfDisks = $('#NumOfDisks').val();
+        if (NumberOfDisks > 5) {
+            alert('Maximo de 5 discos');
+            return;
+        }
+        else if(NumberOfDisks == "") {
+        alert('Informe um Numero');
+            return;
+            }
+        else {
+            Hidedivs();
+        }
+        $('.demo.hidden').eq(0).clone().removeClass("hidden").addClass("game").insertBefore('.divider');
+
+        $.ajax
+            ({
+                url: "http://localhost:59540/api/game",
+                type: "GET",
+                data: { "numOfDisks": NumberOfDisks },
+            });
+    }
+
+    this.ResetGames = function (bypass) {
+        if (bypass) {
+            $.ajax
+                ({
+                    url: "http://localhost:59540/api/gamereset",
+                    type: "GET"
+                });
+        }
+        else {
+            if (window.confirm('Deseja limpar todos os jogos?')) {
+                $.ajax
+                    ({
+                        url: "http://localhost:59540/api/gamereset",
+                        type: "GET"
+                    });
+            }
+        }
+    }
+
+    this.Organize = function () {
+        var totalheight = 170;
+        var diskHeigth = 40;
+        $('.tower').each
+            (
+            function (index) {
+                var disks = $(this).find('.disk').length;
+
+                var currentHeight = disks * diskHeigth;
+                var remaining = totalheight - currentHeight;
+
+                console.log('disks:' + disks);
+                console.log('currentHeight:' + currentHeight);
+                console.log('remaining:' + remaining);
+
+                $(this).find('.organizer').css('height', remaining + 'px');
+
+            }
+            );
+    }
+
+    this.Move = function (gameIndex, oldTowerIndex, newTowerIndex, diskIndex) {
+        var current = $('.game').eq(gameIndex).find('.tower').eq(oldTowerIndex).find('.disk').eq(diskIndex);
+        var destination = $('.game').eq(gameIndex).find('.tower').eq(newTowerIndex);
+
+        var organizer = $('.game').eq(gameIndex).find('.tower').eq(newTowerIndex).find('.organizer');
+
+        current.insertAfter(organizer);
+
+        Organize();
+    }
+
+    // Reference the auto-generated proxy for the hub.
+    var chat = null;
+
+    this.StartSinalR = function () {
+        chat = $.connection.gameHub;
+
+        //// Reference the auto-generated proxy for the hub.
+        //var chat = $.connection.gameHub;
+
+        chat.client.addNewMessageToPage = function (gameIndex, oldTowerIndex, newTowerIndex, diskIndex) {
+            $('#discussion').append('<li><b>Game #' + gameIndex + '</b>: Disco ' + diskIndex + ' da torre ' + oldTowerIndex + ' para a torre ' + newTowerIndex + ';</li>');
+            Move(gameIndex, oldTowerIndex, newTowerIndex, diskIndex);
+        };
+
+        // Start the connection.
+        $.connection.hub.start().done
+            (
+            function () {
+                // Call the Send method on the hub.
+                // chat.server.send('1');
+            }
+            );
+    };
+
+    // This optional function html-encodes messages for display in the page.
+    function htmlEncode(value) {
+        var encodedValue = $('<div />').text(value).html();
+        return encodedValue;
+    }
+</script>

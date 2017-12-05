@@ -1,0 +1,11 @@
+D:\teste\HanoiTower\EI.Hanoi.Services\bin\Debug\EI.Hanoi.Services.dll
+D:\teste\HanoiTower\EI.Hanoi.Services\bin\Debug\EI.Hanoi.Services.pdb
+D:\teste\HanoiTower\EI.Hanoi.Services\bin\Debug\SlackBotMessages.dll
+D:\teste\HanoiTower\EI.Hanoi.Services\obj\Debug\Hanoi.Services.csprojResolveAssemblyReference.cache
+D:\teste\HanoiTower\EI.Hanoi.Services\obj\Debug\Hanoi.Services.csproj.CoreCompileInputs.cache
+D:\teste\HanoiTower\EI.Hanoi.Services\obj\Debug\EI.Hanoi.Services.dll
+D:\teste\HanoiTower\EI.Hanoi.Services\obj\Debug\EI.Hanoi.Services.pdb
+D:\teste\HanoiTower\EI.Hanoi.Services\bin\Debug\Hanoi.Contracts.dll
+D:\teste\HanoiTower\EI.Hanoi.Services\bin\Debug\Hanoi.Model.dll
+D:\teste\HanoiTower\EI.Hanoi.Services\bin\Debug\Hanoi.Contracts.pdb
+D:\teste\HanoiTower\EI.Hanoi.Services\bin\Debug\Hanoi.Model.pdb

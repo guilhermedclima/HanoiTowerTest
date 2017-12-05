@@ -1,0 +1,8 @@
+D:\teste\HanoiTower\EI.Hanoi.Contracts\bin\Debug\EI.Hanoi.Contracts.dll
+D:\teste\HanoiTower\EI.Hanoi.Contracts\bin\Debug\EI.Hanoi.Contracts.pdb
+D:\teste\HanoiTower\EI.Hanoi.Contracts\bin\Debug\EI.Hanoi.Model.dll
+D:\teste\HanoiTower\EI.Hanoi.Contracts\bin\Debug\EI.Hanoi.Model.pdb
+D:\teste\HanoiTower\EI.Hanoi.Contracts\obj\Debug\EI.Hanoi.Contracts.csprojResolveAssemblyReference.cache
+D:\teste\HanoiTower\EI.Hanoi.Contracts\obj\Debug\EI.Hanoi.Contracts.csproj.CoreCompileInputs.cache
+D:\teste\HanoiTower\EI.Hanoi.Contracts\obj\Debug\EI.Hanoi.Contracts.dll
+D:\teste\HanoiTower\EI.Hanoi.Contracts\obj\Debug\EI.Hanoi.Contracts.pdb
